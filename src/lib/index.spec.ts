@@ -2,7 +2,7 @@ import test from 'ava';
 
 import DijkstraCalculator from './';
 
-test('basic test', (t) => {
+test('a graph with assigned weights', (t) => {
   const graph = new DijkstraCalculator();
   graph.addVertex('A');
   graph.addVertex('B');
@@ -42,4 +42,29 @@ test('basic test with same weight', (t) => {
   graph.addEdge('E', 'F');
 
   t.deepEqual(graph.calculateShortestPath('A', 'E'), ['A', 'B', 'E']);
+});
+
+test('test with no possible traversal', (t) => {
+  const graph = new DijkstraCalculator();
+  graph.addVertex('A');
+  graph.addVertex('B');
+  graph.addVertex('C');
+  graph.addVertex('D');
+  graph.addVertex('E');
+  graph.addVertex('F');
+  // let's add a node here that's just floating out there
+  graph.addVertex('Z');
+
+  graph.addEdge('A', 'B', 4);
+  graph.addEdge('A', 'C', 2);
+  graph.addEdge('B', 'E', 3);
+  graph.addEdge('C', 'D', 2);
+  graph.addEdge('C', 'F', 4);
+  graph.addEdge('D', 'E', 3);
+  graph.addEdge('D', 'F', 1);
+  graph.addEdge('E', 'F', 1);
+  // do not any connection to Z
+
+  // ensure that there is an empty array.
+  t.deepEqual(graph.calculateShortestPath('Z', 'A'), []);
 });

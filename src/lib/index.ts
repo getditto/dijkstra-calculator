@@ -93,9 +93,9 @@ export default class DijkstraCalculator {
 
   /**
    *
-   * @param start The starting {@link NodeId}
-   * @param finish The
-   * @returns
+   * @param start The starting {@link NodeId} to begin traversal
+   * @param finish The ending {@link NodeId} to complete traversal
+   * @returns an {@type Array<string>} showing how to traverse the nodes. If traversal is impossible then it will return an empty array
    */
   calculateShortestPath(start: NodeId, finish: NodeId) {
     const nodes = new PriorityQueue();
@@ -144,8 +144,8 @@ export default class DijkstraCalculator {
         }
       }
     }
-    if (!smallest) {
-      throw new Error('Smallest was not found. The value is null.');
+    if (!smallest || path.length <= 1) {
+      return [];
     }
     return path.concat(smallest).reverse();
   }
