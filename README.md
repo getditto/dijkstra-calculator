@@ -2,11 +2,10 @@
 
 # A Typescript implementation of Dijkstra's shortest path algorithm
 
-**GitHub URL**: https://getditto.github.io/dijkstra-calculator/
-
-[![TypeScript](https://img.shields.io/badge/%3C%2F%3E-TypeScript-%230074c1.svg)](http://www.typescriptlang.org/)
-
-![example workflow](https://github.com/getditto/dijkstra-calculator/actions/workflows/ci.yml/badge.svg)
+- **GitHub URL**: https://github.com/getditto/dijkstra-calculator
+- **TypeDoc Link**: https://getditto.github.io/dijkstra-calculator
+- Built with [![TypeScript](https://img.shields.io/badge/%3C%2F%3E-TypeScript-%230074c1.svg)](http://www.typescriptlang.org/)
+- Continuous Integration Status ![Continuous Integration](https://github.com/getditto/dijkstra-calculator/actions/workflows/ci.yml/badge.svg)
 
 Use this to find the shortest path of nodes in graph using [Dijkstra's algorithm](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm). [Learn how to pronounce Dijkstra here](https://www.youtube.com/watch?v=lg6uIPSvclU).
 
