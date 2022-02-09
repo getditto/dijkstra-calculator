@@ -31,10 +31,10 @@ jobs:
         with:
           node-version: '14'
 
-      - name: 'Install and Build'
+      - name: 'Install, Test and Build'
         run: |
           yarn
-          yarn lint
+          yarn test
           yarn build
 
       - name: Generate Documentation Website
