@@ -134,6 +134,25 @@ graph.addEdge(<span class="hljs-string">&#x27;E&#x27;</span>, <span class="hljs-
 <span class="hljs-keyword">const</span> path = graph.calculateShortestPath(<span class="hljs-string">&#x27;A&#x27;</span>, <span class="hljs-string">&#x27;E&#x27;</span>);
 <span class="hljs-comment">// with consideration of the weights at the edge, the values will be [&#x27;A&#x27;, &#x27;C&#x27;, &#x27;D&#x27;, &#x27;F&#x27;, &#x27;E&#x27;]</span>
 </code></pre>
+				<a href="#getting-a-linked-list-instead-of-a-string-array" id="getting-a-linked-list-instead-of-a-string-array" style="color: inherit; text-decoration: none;">
+					<h3>Getting a Linked List instead of a string array</h3>
+				</a>
+				<p>Libraries like <a href="https://d3js.org/">d3</a> or <a href="https://visjs.org/">Vis.js</a> or <a href="https://github.com/vasturiano/react-force-graph/">force-graph</a> will want a structure to specify edges that looks something like this:</p>
+				<pre><code class="language-js">[
+  { <span class="hljs-attr">source</span>: <span class="hljs-string">&#x27;A&#x27;</span>, <span class="hljs-attr">target</span>: <span class="hljs-string">&#x27;B&#x27;</span> },
+  { <span class="hljs-attr">source</span>: <span class="hljs-string">&#x27;C&#x27;</span>, <span class="hljs-attr">target</span>: <span class="hljs-string">&#x27;D&#x27;</span> },
+  <span class="hljs-comment">// etc...</span>
+];
+</code></pre>
+				<p>You can get something that fits these APIs by calling <code>calculateShortestPathAsLinkedListResult</code> like below:</p>
+				<pre><code class="language-js"><span class="hljs-keyword">const</span> linkedList = graph.calculateShortestPathAsLinkedListResult(<span class="hljs-string">&#x27;A&#x27;</span>, <span class="hljs-string">&#x27;E&#x27;</span>),
+  [
+    { <span class="hljs-attr">source</span>: <span class="hljs-string">&#x27;A&#x27;</span>, <span class="hljs-attr">target</span>: <span class="hljs-string">&#x27;C&#x27;</span> },
+    { <span class="hljs-attr">source</span>: <span class="hljs-string">&#x27;C&#x27;</span>, <span class="hljs-attr">target</span>: <span class="hljs-string">&#x27;D&#x27;</span> },
+    { <span class="hljs-attr">source</span>: <span class="hljs-string">&#x27;D&#x27;</span>, <span class="hljs-attr">target</span>: <span class="hljs-string">&#x27;F&#x27;</span> },
+    { <span class="hljs-attr">source</span>: <span class="hljs-string">&#x27;F&#x27;</span>, <span class="hljs-attr">target</span>: <span class="hljs-string">&#x27;E&#x27;</span> },
+  ];
+</code></pre>
 				<a href="#pronunciation-of-dijkstra" id="pronunciation-of-dijkstra" style="color: inherit; text-decoration: none;">
 					<h2>Pronunciation Of Dijkstra</h2>
 				</a>
