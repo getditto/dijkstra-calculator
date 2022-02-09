@@ -1,5 +1,9 @@
 # A typescript implementation of Dijkstra's shortest path algorithm
 
+[![TypeScript](https://img.shields.io/badge/%3C%2F%3E-TypeScript-%230074c1.svg)](http://www.typescriptlang.org/)
+
+![example workflow](https://github.com/getditto/dijkstra-calculator/actions/workflows/ci.yml/badge.svg)
+
 Use this to find the shortest path of nodes in graph
 
 I created a typescript library by porting over the great work done here: https://gist.github.com/Prottoy2938/66849e04b0bac459606059f5f9f3aa1a
