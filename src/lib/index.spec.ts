@@ -21,6 +21,12 @@ test('a graph with assigned weights', (t) => {
   graph.addEdge('E', 'F', 1);
 
   t.deepEqual(graph.calculateShortestPath('A', 'E'), ['A', 'C', 'D', 'F', 'E']);
+  t.deepEqual(graph.calculateShortestPathAsLinkedListResult('A', 'E'), [
+    { source: 'A', target: 'C' },
+    { source: 'C', target: 'D' },
+    { source: 'D', target: 'F' },
+    { source: 'F', target: 'E' },
+  ]);
 });
 
 test('basic test with same weight', (t) => {
@@ -42,6 +48,10 @@ test('basic test with same weight', (t) => {
   graph.addEdge('E', 'F');
 
   t.deepEqual(graph.calculateShortestPath('A', 'E'), ['A', 'B', 'E']);
+  t.deepEqual(graph.calculateShortestPathAsLinkedListResult('A', 'E'), [
+    { source: 'A', target: 'B' },
+    { source: 'B', target: 'E' },
+  ]);
 });
 
 test('test with no possible traversal', (t) => {
@@ -67,4 +77,5 @@ test('test with no possible traversal', (t) => {
 
   // ensure that there is an empty array.
   t.deepEqual(graph.calculateShortestPath('Z', 'A'), []);
+  t.deepEqual(graph.calculateShortestPathAsLinkedListResult('Z', 'A'), []);
 });

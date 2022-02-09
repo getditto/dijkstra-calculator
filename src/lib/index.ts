@@ -75,6 +75,11 @@ class PriorityQueue {
   }
 }
 
+export interface LinkedListItem {
+  source: NodeId;
+  target: NodeId;
+}
+
 export default class DijkstraCalculator {
   adjacencyList: { [key: NodeId]: { id: NodeId; weight: number }[] };
 
@@ -92,7 +97,7 @@ export default class DijkstraCalculator {
   }
 
   /**
-   *
+   * Given the provided weights of each edge
    * @param start The starting {@link NodeId} to begin traversal
    * @param finish The ending {@link NodeId} to complete traversal
    * @returns an {@type Array<string>} showing how to traverse the nodes. If traversal is impossible then it will return an empty array
@@ -148,5 +153,32 @@ export default class DijkstraCalculator {
       return [];
     }
     return path.concat(smallest).reverse();
+  }
+
+  /**
+   * Creates a linked list of the result with each element with a source and target property
+   * @param start The starting {@link NodeId} to begin traversal
+   * @param finish The ending {@link NodeId} to complete traversal
+   * @returns Returns an array where each element is a {@link LinkedListItem}
+   */
+  calculateShortestPathAsLinkedListResult(
+    start: NodeId,
+    finish: NodeId
+  ): LinkedListItem[] {
+    const array: string[] = this.calculateShortestPath(start, finish);
+
+    if (array.length <= 1) {
+      return [];
+    }
+    const linkedList: LinkedListItem[] = [];
+    for (let index = 1; index < array.length; index++) {
+      const element = array[index];
+      const previous = array[index - 1];
+      linkedList.push({
+        source: previous,
+        target: element,
+      });
+    }
+    return linkedList;
   }
 }
