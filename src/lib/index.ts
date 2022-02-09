@@ -171,7 +171,7 @@ export default class DijkstraCalculator {
       return [];
     }
     const linkedList: LinkedListItem[] = [];
-    for (let index = 1; index <= array.length; index++) {
+    for (let index = 1; index < array.length; index++) {
       const element = array[index];
       const previous = array[index - 1];
       linkedList.push({
