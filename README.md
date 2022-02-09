@@ -77,6 +77,30 @@ const path = graph.calculateShortestPath('A', 'E');
 // with consideration of the weights at the edge, the values will be ['A', 'C', 'D', 'F', 'E']
 ```
 
+### Getting a Linked List instead of a string array
+
+Libraries like [d3](https://d3js.org/) or [Vis.js](https://visjs.org/) or [force-graph](https://github.com/vasturiano/react-force-graph/) will want a structure to specify edges that looks something like this:
+
+```js
+[
+  { source: 'A', target: 'B' },
+  { source: 'C', target: 'D' },
+  // etc...
+];
+```
+
+You can get something that fits these APIs by calling `calculateShortestPathAsLinkedListResult` like below:
+
+```js
+const linkedList = graph.calculateShortestPathAsLinkedListResult('A', 'E'),
+  [
+    { source: 'A', target: 'C' },
+    { source: 'C', target: 'D' },
+    { source: 'D', target: 'F' },
+    { source: 'F', target: 'E' },
+  ];
+```
+
 ## Pronunciation Of Dijkstra
 
 Not sure how to pronounce Dijkstra? https://www.youtube.com/watch?v=lg6uIPSvclU
