@@ -4,7 +4,7 @@
 
 ![example workflow](https://github.com/getditto/dijkstra-calculator/actions/workflows/ci.yml/badge.svg)
 
-Use this to find the shortest path of nodes in graph using Dijkstra's algorithm. [Learn how to pronounce Dijkstra here](https://www.youtube.com/watch?v=lg6uIPSvclU).
+Use this to find the shortest path of nodes in graph using [Dijkstra's algorithm](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm). [Learn how to pronounce Dijkstra here](https://www.youtube.com/watch?v=lg6uIPSvclU).
 
 This library a typescript port from the great work done here: https://gist.github.com/Prottoy2938/66849e04b0bac459606059f5f9f3aa1a
 
