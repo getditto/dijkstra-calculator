@@ -8,7 +8,9 @@
 
 Use this to find the shortest path of nodes in graph using [Dijkstra's algorithm](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm). [Learn how to pronounce Dijkstra here](https://www.youtube.com/watch?v=lg6uIPSvclU).
 
-This library a typescript port from the great work done here: https://gist.github.com/Prottoy2938/66849e04b0bac459606059f5f9f3aa1a
+This library a TypeScript port from [Alfred Gatsby @Prottoy2938](https://github.com/Prottoy2938) for the great work done here: https://gist.github.com/Prottoy2938/66849e04b0bac459606059f5f9f3aa1a
+
+At [Ditto](https://www.ditto.live) we do a lot of imagery with [react-force-graph](https://github.com/vasturiano/react-force-graph) to show how our mesh network can establish virtual connections between peers. This library is used to aid in showing the shortest path between peers. Note: we use a modified version of Dijkstra's Algorithm with differing priority per link as a consideration for our system. This library is primarily used for assisting in simple visualizations in our documentation and blog.
 
 ## Installation
 
