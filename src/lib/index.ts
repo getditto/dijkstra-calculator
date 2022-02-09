@@ -80,7 +80,7 @@ export interface LinkedListItem {
   target: NodeId;
 }
 
-export default class DijkstraCalculator {
+export class DijkstraCalculator {
   adjacencyList: { [key: NodeId]: { id: NodeId; weight: number }[] };
 
   constructor() {
