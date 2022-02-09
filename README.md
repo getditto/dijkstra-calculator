@@ -4,9 +4,9 @@
 
 ![example workflow](https://github.com/getditto/dijkstra-calculator/actions/workflows/ci.yml/badge.svg)
 
-Use this to find the shortest path of nodes in graph
+Use this to find the shortest path of nodes in graph using Dijkstra's algorithm. [Learn how to pronounce Dijkstra here](https://www.youtube.com/watch?v=lg6uIPSvclU).
 
-I created a typescript library by porting over the great work done here: https://gist.github.com/Prottoy2938/66849e04b0bac459606059f5f9f3aa1a
+This library a typescript port from the great work done here: https://gist.github.com/Prottoy2938/66849e04b0bac459606059f5f9f3aa1a
 
 ## Installation
 
@@ -76,3 +76,7 @@ graph.addEdge('E', 'F', 1);
 const path = graph.calculateShortestPath('A', 'E');
 // with consideration of the weights at the edge, the values will be ['A', 'C', 'D', 'F', 'E']
 ```
+
+## Pronunciation Of Dijkstra
+
+Not sure how to pronounce Dijkstra? https://www.youtube.com/watch?v=lg6uIPSvclU
