@@ -1,6 +1,6 @@
 {
   "name": "dijkstra-calculator",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "Dijkstra calculator for the shortest path in a graph of nodes given a weight.",
   "main": "build/main/index.js",
   "typings": "build/main/index.d.ts",
