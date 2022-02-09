@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import DijkstraCalculator from './';
+import { DijkstraCalculator } from './';
 
 test('a graph with assigned weights', (t) => {
   const graph = new DijkstraCalculator();

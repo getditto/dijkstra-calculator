@@ -29,7 +29,7 @@ Let's say you want to find the shortest path between two nodes in the graph.
 Given a series of Nodes in a graph with identifiers `"A "`to `"F"` and edges established between each one
 
 ```js
-import DijkstraCalculator from 'dijkstra-calculator';
+import { DijkstraCalculator } from 'dijkstra-calculator';
 
 const graph = new DijkstraCalculator();
 
@@ -59,7 +59,7 @@ const path = graph.calculateShortestPath('A', 'E');
 There are instances where you'd like to add some priority or weight to an edge. The 3rd parameter
 
 ```js
-import DijkstraCalculator from 'dijkstra-calculator';
+import { DijkstraCalculator } from 'dijkstra-calculator';
 
 const graph = new DijkstraCalculator();
 graph.addVertex('A');
