@@ -21,7 +21,9 @@
     "sandboxed",
     "transpiled",
     "typedoc",
-    "untracked"
+    "untracked",
+    "Prottoy2938",
+    "Prottoy"
   ],
   "flagWords": [],
   "ignorePaths": [
