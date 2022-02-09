@@ -2,6 +2,8 @@
 
 # A Typescript implementation of Dijkstra's shortest path algorithm
 
+**GitHub URL**: https://getditto.github.io/dijkstra-calculator/
+
 [![TypeScript](https://img.shields.io/badge/%3C%2F%3E-TypeScript-%230074c1.svg)](http://www.typescriptlang.org/)
 
 ![example workflow](https://github.com/getditto/dijkstra-calculator/actions/workflows/ci.yml/badge.svg)
