@@ -68,10 +68,15 @@
 				<a href="#a-typescript-implementation-of-dijkstra39s-shortest-path-algorithm" id="a-typescript-implementation-of-dijkstra39s-shortest-path-algorithm" style="color: inherit; text-decoration: none;">
 					<h1>A Typescript implementation of Dijkstra&#39;s shortest path algorithm</h1>
 				</a>
-				<p><a href="http://www.typescriptlang.org/"><img src="https://img.shields.io/badge/%3C%2F%3E-TypeScript-%230074c1.svg" alt="TypeScript"></a></p>
-				<p><img src="https://github.com/getditto/dijkstra-calculator/actions/workflows/ci.yml/badge.svg" alt="example workflow"></p>
+				<ul>
+					<li><strong>GitHub URL</strong>: <a href="https://github.com/getditto/dijkstra-calculator">https://github.com/getditto/dijkstra-calculator</a></li>
+					<li><strong>TypeDoc Link</strong>: <a href="https://getditto.github.io/dijkstra-calculator">https://getditto.github.io/dijkstra-calculator</a></li>
+					<li>Built with <a href="http://www.typescriptlang.org/"><img src="https://img.shields.io/badge/%3C%2F%3E-TypeScript-%230074c1.svg" alt="TypeScript"></a></li>
+					<li>Continuous Integration Status <img src="https://github.com/getditto/dijkstra-calculator/actions/workflows/ci.yml/badge.svg" alt="Continuous Integration"></li>
+				</ul>
 				<p>Use this to find the shortest path of nodes in graph using <a href="https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm">Dijkstra&#39;s algorithm</a>. <a href="https://www.youtube.com/watch?v=lg6uIPSvclU">Learn how to pronounce Dijkstra here</a>.</p>
-				<p>This library a typescript port from the great work done here: <a href="https://gist.github.com/Prottoy2938/66849e04b0bac459606059f5f9f3aa1a">https://gist.github.com/Prottoy2938/66849e04b0bac459606059f5f9f3aa1a</a></p>
+				<p>This library a TypeScript port from <a href="https://github.com/Prottoy2938">Alfred Gatsby @Prottoy2938</a> for the great work done here: <a href="https://gist.github.com/Prottoy2938/66849e04b0bac459606059f5f9f3aa1a">https://gist.github.com/Prottoy2938/66849e04b0bac459606059f5f9f3aa1a</a></p>
+				<p>At <a href="https://www.ditto.live">Ditto</a> we do a lot of imagery with <a href="https://github.com/vasturiano/react-force-graph">react-force-graph</a> to show how our mesh network can establish virtual connections between peers. This library is used to aid in showing the shortest path between peers. Note: we use a modified version of Dijkstra&#39;s Algorithm with differing priority per link as a consideration for our system. This library is primarily used for assisting in simple visualizations in our documentation and blog.</p>
 				<a href="#installation" id="installation" style="color: inherit; text-decoration: none;">
 					<h2>Installation</h2>
 				</a>
@@ -146,13 +151,14 @@ graph.addEdge(<span class="hljs-string">&#x27;E&#x27;</span>, <span class="hljs-
 ];
 </code></pre>
 				<p>You can get something that fits these APIs by calling <code>calculateShortestPathAsLinkedListResult</code> like below:</p>
-				<pre><code class="language-js"><span class="hljs-keyword">const</span> linkedList = graph.calculateShortestPathAsLinkedListResult(<span class="hljs-string">&#x27;A&#x27;</span>, <span class="hljs-string">&#x27;E&#x27;</span>),
-  [
-    { <span class="hljs-attr">source</span>: <span class="hljs-string">&#x27;A&#x27;</span>, <span class="hljs-attr">target</span>: <span class="hljs-string">&#x27;C&#x27;</span> },
-    { <span class="hljs-attr">source</span>: <span class="hljs-string">&#x27;C&#x27;</span>, <span class="hljs-attr">target</span>: <span class="hljs-string">&#x27;D&#x27;</span> },
-    { <span class="hljs-attr">source</span>: <span class="hljs-string">&#x27;D&#x27;</span>, <span class="hljs-attr">target</span>: <span class="hljs-string">&#x27;F&#x27;</span> },
-    { <span class="hljs-attr">source</span>: <span class="hljs-string">&#x27;F&#x27;</span>, <span class="hljs-attr">target</span>: <span class="hljs-string">&#x27;E&#x27;</span> },
-  ];
+				<pre><code class="language-js"><span class="hljs-keyword">const</span> linkedList = graph.calculateShortestPathAsLinkedListResult(<span class="hljs-string">&#x27;A&#x27;</span>, <span class="hljs-string">&#x27;E&#x27;</span>)
+<span class="hljs-comment">// This will result in `linkedList` with the following contents</span>
+[
+  { <span class="hljs-attr">source</span>: <span class="hljs-string">&#x27;A&#x27;</span>, <span class="hljs-attr">target</span>: <span class="hljs-string">&#x27;C&#x27;</span> },
+  { <span class="hljs-attr">source</span>: <span class="hljs-string">&#x27;C&#x27;</span>, <span class="hljs-attr">target</span>: <span class="hljs-string">&#x27;D&#x27;</span> },
+  { <span class="hljs-attr">source</span>: <span class="hljs-string">&#x27;D&#x27;</span>, <span class="hljs-attr">target</span>: <span class="hljs-string">&#x27;F&#x27;</span> },
+  { <span class="hljs-attr">source</span>: <span class="hljs-string">&#x27;F&#x27;</span>, <span class="hljs-attr">target</span>: <span class="hljs-string">&#x27;E&#x27;</span> },
+];
 </code></pre>
 				<a href="#pronunciation-of-dijkstra" id="pronunciation-of-dijkstra" style="color: inherit; text-decoration: none;">
 					<h2>Pronunciation Of Dijkstra</h2>
