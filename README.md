@@ -96,13 +96,14 @@ Libraries like [d3](https://d3js.org/) or [Vis.js](https://visjs.org/) or [force
 You can get something that fits these APIs by calling `calculateShortestPathAsLinkedListResult` like below:
 
 ```js
-const linkedList = graph.calculateShortestPathAsLinkedListResult('A', 'E'),
-  [
-    { source: 'A', target: 'C' },
-    { source: 'C', target: 'D' },
-    { source: 'D', target: 'F' },
-    { source: 'F', target: 'E' },
-  ];
+const linkedList = graph.calculateShortestPathAsLinkedListResult('A', 'E')
+// This will result in `linkedList` with the following contents
+[
+  { source: 'A', target: 'C' },
+  { source: 'C', target: 'D' },
+  { source: 'D', target: 'F' },
+  { source: 'F', target: 'E' },
+];
 ```
 
 ## Pronunciation Of Dijkstra
