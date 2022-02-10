@@ -54,7 +54,7 @@ test('basic test with same weight', (t) => {
   ]);
 });
 
-test('test with no possible traversal', (t) => {
+test('no possible traversal should have an empty result', (t) => {
   const graph = new DijkstraCalculator();
   graph.addVertex('A');
   graph.addVertex('B');
@@ -78,4 +78,19 @@ test('test with no possible traversal', (t) => {
   // ensure that there is an empty array.
   t.deepEqual(graph.calculateShortestPath('Z', 'A'), []);
   t.deepEqual(graph.calculateShortestPathAsLinkedListResult('Z', 'A'), []);
+});
+
+test('single node hop should only have 2 primitive array elements and one linked list result', (t) => {
+  const graph = new DijkstraCalculator();
+  graph.addVertex('A');
+  graph.addVertex('B');
+
+  graph.addEdge('A', 'B');
+  // do not any connection to Z
+
+  // ensure that there is an empty array.
+  t.deepEqual(graph.calculateShortestPath('A', 'B'), ['A', 'B']);
+  t.deepEqual(graph.calculateShortestPathAsLinkedListResult('A', 'B'), [
+    { source: 'A', target: 'B' },
+  ]);
 });

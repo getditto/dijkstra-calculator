@@ -149,10 +149,20 @@ export class DijkstraCalculator {
         }
       }
     }
-    if (!smallest || path.length <= 1) {
+
+    let finalPath: string[] = [];
+    if (!smallest) {
+      finalPath = path.reverse();
+    } else {
+      finalPath = path.concat(smallest).reverse();
+    }
+
+    if (finalPath.length <= 1) {
+      // if the final path has only 1 or fewer elements, there was no traversal that was possible.
       return [];
     }
-    return path.concat(smallest).reverse();
+
+    return finalPath;
   }
 
   /**
@@ -166,19 +176,16 @@ export class DijkstraCalculator {
     finish: NodeId
   ): LinkedListItem[] {
     const array: string[] = this.calculateShortestPath(start, finish);
-
-    if (array.length <= 1) {
-      return [];
-    }
-    const linkedList: LinkedListItem[] = [];
-    for (let index = 1; index < array.length; index++) {
-      const element = array[index];
-      const previous = array[index - 1];
-      linkedList.push({
-        source: previous,
-        target: element,
+    const linkedListItems: LinkedListItem[] = [];
+    for (let i = 0; i < array.length; i++) {
+      if (i == array.length - 1) {
+        break;
+      }
+      linkedListItems.push({
+        source: array[i],
+        target: array[i + 1],
       });
     }
-    return linkedList;
+    return linkedListItems;
   }
 }
